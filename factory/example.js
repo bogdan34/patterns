@@ -21,19 +21,19 @@ class DOM {
 
 class TextField {
     constructor(props) {
-        this.element = DOM.createElement('input', props);
+        return DOM.createElement('input', props);
     }
 }
 
 class EmailField {
     constructor(props) {
-        this.element = DOM.createElement('input', props);
+        return DOM.createElement('input', props);
     }
 }
 
 class PasswordField {
     constructor(props) {
-        this.element = DOM.createElement('input', props);
+        return DOM.createElement('input', props);
     }
 }
 
@@ -57,7 +57,7 @@ class Form {
 
     addFields(...fields) {
         for (let field of fields) {
-            this.element.appendChild(field.element);
+            this.element.appendChild(field);
         }
     }
 }
@@ -74,6 +74,8 @@ form.addFields(
     Form.createField({type: 'email'}),
     Form.createField({type: 'password'})
 );
+
+console.log(Form.createField({type: 'text'}))
 console.log(form);
 
 document.addEventListener('DOMContentLoaded', () => {
