@@ -30,5 +30,5 @@ class Logger {
 
 const logger = new Logger('log.txt');
 
-logger.write('pattern sinleton');
+logger.write('pattern singleton');
 console.log(logger.read());

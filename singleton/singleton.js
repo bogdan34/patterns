@@ -14,4 +14,4 @@ const singleton = (function () {
         }
     }
 })();
-console.log(singleton.getInstance() === singleton.getInstance())
+console.log(singleton.getInstance() === singleton.getInstance());

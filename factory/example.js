@@ -19,6 +19,10 @@ class DOM {
     }
 }
 
+const elem = DOM.createElement('div', {className: 'test', id: 'test_id'}, 'test');
+const createDiv = DOM.createFactory('div');
+const div = createDiv();
+
 class TextField {
     constructor(props) {
         return DOM.createElement('input', props);
@@ -52,7 +56,7 @@ class Form {
     }
 
     constructor() {
-        this.element = DOM.createElement('form');
+        this.element = DOM.createElement('form', {className: 'flex-box'});
     }
 
     addFields(...fields) {
@@ -64,19 +68,12 @@ class Form {
 
 DOM.Form = Form;
 
-const elem = DOM.createElement('div', {className: 'test', id: 'test_id'}, 'text test');
-const createDiv = DOM.createFactory('div');
-const div = createDiv();
-
 const form = new DOM.Form();
 form.addFields(
     Form.createField({type: 'text'}),
     Form.createField({type: 'email'}),
     Form.createField({type: 'password'})
 );
-
-console.log(Form.createField({type: 'text'}))
-console.log(form);
 
 document.addEventListener('DOMContentLoaded', () => {
     document.body.appendChild(form.element);

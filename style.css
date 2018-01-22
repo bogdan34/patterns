@@ -1,0 +1,13 @@
+body{
+  padding: 60px;
+  background-color: #cccccc;
+}
+.flex-box{
+  display: flex;
+  flex-direction: column;
+}
+.flex-box > * {
+  margin: 5px 5px;
+  width: 320px;
+  padding: 5px 12px;
+}
