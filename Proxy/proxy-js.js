@@ -17,7 +17,8 @@ class Person {
     sayHello(){
         console.log(`Hello, my name is ${this.name}`)
     }
-};
+}
+
 const person = new Person('John', 'Genry');
 const proxyPerson = new Proxy(person, handler);
 proxyPerson.sayHello();
